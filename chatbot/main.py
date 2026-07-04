@@ -2,7 +2,8 @@
 import os
 
 print("Running:", os.path.abspath(__file__))
-from engine import find_answer
+print("***** VERSION 3 *****")
+from engine import find_answer, update_answer
 from database import load_knowledge, save_knowledge
 
 knowledge = load_knowledge()
@@ -13,25 +14,36 @@ print(f"Number of records: {len(knowledge)}")
 while True:
     question = input("Ask me: ").strip()
 
-    # Exit command
     if question.lower() == "exit":
         print("Goodbye!")
         break
 
-    # Show all topics
-    if question.lower()in ["topics", "type"]:
-        print(">>> ENTERED TOPICS BLOCK <<<")
+    if question.lower() in ["topics", "type"]:
+        print("\nAvailable Topics:")
 
-    for item in knowledge:
-        print(item["topic"])
+        for item in knowledge:
+            print("-", item["topic"])
 
-    continue
-    # Search for answer
+        print()
+        continue
+
+    if question.lower() == "update":
+        topic = input("Enter topic to update: ").strip()
+
+        updated = update_answer(topic, knowledge)
+
+        if updated:
+            save_knowledge(knowledge)
+            print("Answer updated successfully!")
+        else:
+            print("Topic not found.")
+
+        continue
+
     answer = find_answer(question, knowledge)
 
     if answer:
         print(answer)
-
     else:
         print("Sorry, no answer.")
 
