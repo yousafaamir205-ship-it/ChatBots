@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "topic": "Python",
+        "question": "What is Python?",
+        "answer": "Python is a high-level programming language."
+    },
+    {
+        "id": 2,
+        "topic": "SQL",
+        "question": "What is SQL?",
+        "answer": "SQL is used to manage relational databases."
+    },
+    {
+        "id": 3,
+        "topic": "AI",
+        "question": "What is AI?",
+        "answer": "Artificial Intelligence enables computers to perform tasks that usually require human intelligence."
+    },
+    {
+        "id": 4,
+        "topic": "Programming",
+        "question": "what is java",
+        "answer": "Java is an object-oriented programming language."
+    },
+    {
+        "id": 5,
+        "topic": "OOp",
+        "question": "what is OOP",
+        "answer": "OOP means object oriented programming, it is basically a technique used in different programming languages in which real life objects are made"
+    }
+]
