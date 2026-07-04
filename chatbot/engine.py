@@ -1,3 +1,4 @@
+import random
 import difflib
 from utils import clean_text
 
@@ -39,3 +40,6 @@ def update_answer(topic, knowledge):
             return True
 
     return False
+
+def random_fact(knowledge):
+    return random.choice(knowledge)

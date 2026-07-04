@@ -2,8 +2,7 @@
 import os
 
 print("Running:", os.path.abspath(__file__))
-print("***** VERSION 3 *****")
-from engine import find_answer, update_answer
+from engine import find_answer, update_answer,random_fact
 from database import load_knowledge, save_knowledge
 
 knowledge = load_knowledge()
@@ -41,6 +40,17 @@ while True:
         continue
 
     answer = find_answer(question, knowledge)
+    if question.lower() == "random":
+        fact = random_fact(knowledge)
+
+        print("\nRandom Knowledge")
+        print("----------------")
+        print("Topic:", fact["topic"])
+        print("Question:", fact["question"])
+        print("Answer:", fact["answer"])
+        print()
+
+        continue
 
     if answer:
         print(answer)
