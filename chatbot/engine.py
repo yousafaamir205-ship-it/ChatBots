@@ -1,10 +1,12 @@
 from utils import clean_text
 
 def find_answer(question, knowledge):
-    search_question = clean_text(question)
+    question = clean_text(question)
 
     for item in knowledge:
-        if clean_text(item["question"]) == search_question:
+        topic = clean_text(item["topic"])
+
+        if topic in question:
             return item["answer"]
 
     return None
