@@ -1,8 +1,7 @@
 import random
 import difflib
-from utils import clean_text
 
-from utils import clean_text
+from chatbot.utils import clean_text
 
 def find_answer(question, knowledge):
     question = clean_text(question)
