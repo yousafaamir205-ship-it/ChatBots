@@ -13,3 +13,16 @@ def load_knowledge():
 def save_knowledge(knowledge):
     with open(FILE_PATH, "w", encoding="utf-8") as file:
         json.dump(knowledge, file, indent=4)
+
+
+def add_knowledge(question, answer, topic):
+    knowledge = load_knowledge()
+
+    knowledge.append({
+        "id": len(knowledge) + 1,
+        "topic": topic,
+        "question": question,
+        "answer": answer
+    })
+
+    save_knowledge(knowledge)
